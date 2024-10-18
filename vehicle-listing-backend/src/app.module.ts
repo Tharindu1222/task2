@@ -16,6 +16,7 @@ import { Ad } from './app.entity';
       entities: [Ad],
       synchronize: true, // Use with caution, only in development
       logging: true, // Enable logging to see SQL queries
+
     }),
     TypeOrmModule.forFeature([Ad]),
   ],
