@@ -1,4 +1,4 @@
-import { Controller, Post, Body, Put, Param, Get } from '@nestjs/common';
+import { Controller, Post, Body, Put, Param, Get, Delete } from '@nestjs/common';
 import { AdsService } from './app.service';
 import { CreateAdDto } from './app.dto';
 import { Ad } from './app.entity';
@@ -17,8 +17,13 @@ export class AdsController {
     return this.adsService.update(id, updateAdDto);
   }
 
-  @Get(':id') // Optional: For testing if the ad exists
+  @Get(':id') // Endpoint to get a specific ad by ID
   getAd(@Param('id') id: number): Promise<Ad> {
     return this.adsService.findOne(id);
+  }
+
+  @Delete(':id') // Endpoint to delete a specific ad by ID
+  deleteAd(@Param('id') id: number): Promise<void> {
+    return this.adsService.delete(id);
   }
 }

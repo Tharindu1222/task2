@@ -32,4 +32,11 @@ export class AdsService {
     }
     return ad;
   }
+
+  async delete(id: number): Promise<void> {
+    const result = await this.adsRepository.delete(id);
+    if (result.affected === 0) {
+      throw new NotFoundException(`Ad with ID ${id} not found`);
+    }
+  }
 }

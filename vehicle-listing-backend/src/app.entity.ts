@@ -3,6 +3,7 @@ import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class Ad {
+
   @PrimaryGeneratedColumn()
   id: number;
 
