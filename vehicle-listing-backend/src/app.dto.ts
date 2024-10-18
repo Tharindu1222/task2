@@ -61,4 +61,12 @@ export class CreateAdDto {
   @IsOptional()
   @IsNumber()
   askingPrice?: number;
+
+  @IsString()
+  @IsOptional()
+  make?: string;
+
+  @IsString()
+  @IsOptional()
+  model?: string;
 }
